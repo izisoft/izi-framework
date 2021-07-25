@@ -19,6 +19,11 @@ use izi\db\DbModel;
  */
 class Application
 {
+    const EVENT_BEFORE_REQUEST = 'beforeRequest';
+    const EVENT_AFTER_REQUEST = 'afterRequest';
+
+    protected array $eventListeners = [];
+
     public string $layout = 'main';
     public string $userClass;
     public static string $ROOT_DIR;
@@ -32,6 +37,11 @@ class Application
     public View $view;
     public static Application $app;
 
+    /**
+     * Application constructor.
+     * @param $rootPath
+     * @param array $config
+     */
     public function __construct($rootPath, array $config)
     {
         self::$ROOT_DIR = $rootPath;
@@ -54,8 +64,12 @@ class Application
 
     }
 
+    /**
+     *
+     */
     public function run()
     {
+        $this->triggerEvent(self::EVENT_BEFORE_REQUEST);
         try{
             echo $this->router->resolve();
         }catch (\Exception $e){
@@ -63,6 +77,26 @@ class Application
             echo $this->view->renderView('_error', [
                 'exception' => $e
             ]);
+        }
+    }
+
+    /**
+     * @param $eventName
+     * @param $callback
+     */
+    public function on($eventName, $callback)
+    {
+        $this->eventListeners[$eventName][] = $callback;
+    }
+
+    /**
+     * @param $eventName
+     */
+    public function triggerEvent($eventName)
+    {
+        $callbacks = $this->eventListeners[$eventName] ?? [];
+        foreach ($callbacks as $callback){
+            call_user_func($callback);
         }
     }
 
@@ -82,6 +116,10 @@ class Application
         $this->controller = $controller;
     }
 
+    /**
+     * @param DbModel $user
+     * @return bool
+     */
     public function login(DbModel $user): bool
     {
         $this->user = $user;
@@ -91,12 +129,18 @@ class Application
         return true;
     }
 
+    /**
+     * Logout && clear user session
+     */
     public function logout()
     {
         $this->user = null;
         $this->session->remove('user');
     }
 
+    /**
+     * @return bool
+     */
     public static function isGuest(): bool
     {
         return !self::$app->user;

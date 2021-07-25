@@ -5,12 +5,12 @@
  * @license https://framework.iziweb.net/license
  */
 
-namespace app\core\exceptions;
+namespace izi\exceptions;
 
 /**
  * Class ForbiddenException
  *
- * @package app\core\exceptions
+ * @package izi\exceptions
  * @author Giang A Tin <vantruong1898@gmail.com>
  * @since 1.0
  */

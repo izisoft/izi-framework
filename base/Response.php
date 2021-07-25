@@ -5,12 +5,12 @@
  * @license https://framework.iziweb.net/license
  */
 
-namespace app\core;
+namespace izi\base;
 
 /**
  * Class Response
  *
- * @package app\core
+ * @package izi
  * @author Giang A Tin <vantruong1898@gmail.com>
  * @since 1.0
  */

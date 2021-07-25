@@ -5,14 +5,14 @@
  * @license https://framework.iziweb.net/license
  */
 
-namespace app\core\form;
+namespace izi\forms;
 
-use app\core\Model;
+use izi\base\Model;
 
 /**
  * Class InputField
  *
- * @package app\core\form
+ * @package izi\forms
  * @author Giang A Tin <vantruong1898@gmail.com>
  * @since 1.0
  */
@@ -68,7 +68,7 @@ class InputField extends BaseField
      */
     public function renderInput(): string
     {
-        return sprintf('<input type="%s" name="%s" value="%s" class="form-control %s">',
+        return sprintf('<input type="%s" name="%s" value="%s" class="forms-control %s">',
             $this->type,
             $this->attribute,
             $this->model->{$this->attribute} ?? '',

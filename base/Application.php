@@ -5,18 +5,17 @@
  * @license https://framework.iziweb.net/license
  */
 
-namespace app\core;
+namespace izi\base;
 
-use app\controllers\Controller;
-use app\core\db\Database;
-use app\core\db\DbModel;
+use izi\db\Database;
+use izi\db\DbModel;
 
 /**
  * Class Application
- * @package app\core
+ * @package izi
  * @author Giàng A Tỉn <vantruong1898@gmail.com>
  * @since 1.0
- * @var $userClass app\models\User
+ * @var $userClass UserModel
  */
 class Application
 {

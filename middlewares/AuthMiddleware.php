@@ -5,15 +5,15 @@
  * @license https://framework.iziweb.net/license
  */
 
-namespace app\core\middlewares;
+namespace izi\middlewares;
 
-use app\core\Application;
-use app\core\exceptions\ForbiddenException;
+use izi\base\Application;
+use izi\exceptions\ForbiddenException;
 
 /**
  * Class AuthMiddleware
  *
- * @package app\core\middlewares
+ * @package izi\middlewares
  * @author Giang A Tin <vantruong1898@gmail.com>
  * @since 1.0
  */

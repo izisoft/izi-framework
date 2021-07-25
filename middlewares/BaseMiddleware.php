@@ -5,12 +5,12 @@
  * @license https://framework.iziweb.net/license
  */
 
-namespace app\core\middlewares;
+namespace izi\middlewares;
 
 /**
  * Class BaseMiddleware
  *
- * @package app\core\middlewares
+ * @package izi\middlewares
  * @author Giang A Tin <vantruong1898@gmail.com>
  * @since 1.0
  */

@@ -5,14 +5,14 @@
  * @license https://framework.iziweb.net/license
  */
 
-namespace app\core\form;
+namespace izi\forms;
 
-use app\core\Model;
+use izi\base\Model;
 
 /**
  * Class Form
  *
- * @package app\core\form
+ * @package izi\forms
  * @author Giang A Tin <vantruong1898@gmail.com>
  * @since 1.0
  */
@@ -25,7 +25,7 @@ class Form
      */
     public static function begin($action, $method): Form
     {
-        echo sprintf('<form action="%s" method="%s">', $action, $method);
+        echo sprintf('<forms action="%s" method="%s">', $action, $method);
         return new Form();
     }
 
@@ -34,7 +34,7 @@ class Form
      */
     public static function end()
     {
-        echo '</form>';
+        echo '</forms>';
     }
 
     /**

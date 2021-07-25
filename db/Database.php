@@ -5,14 +5,14 @@
  * @license https://framework.iziweb.net/license
  */
 
-namespace app\core\db;
+namespace izi\db;
 
-use app\core\Application;
+use izi\base\Application;
 
 /**
  * Class Database
  *
- * @package app\core
+ * @package izi\base
  * @author Giang A Tin <vantruong1898@gmail.com>
  * @since 1.0
  */

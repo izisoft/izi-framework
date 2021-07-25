@@ -5,14 +5,14 @@
  * @license https://framework.iziweb.net/license
  */
 
-namespace app\core;
+namespace izi\base;
 
-use app\core\db\DbModel;
+use izi\db\DbModel;
 
 /**
  * Class UserModel
  *
- * @package app\core
+ * @package izi
  * @author Giang A Tin <vantruong1898@gmail.com>
  * @since 1.0
  */

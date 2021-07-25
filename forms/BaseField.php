@@ -5,14 +5,14 @@
  * @license https://framework.iziweb.net/license
  */
 
-namespace app\core\form;
+namespace izi\forms;
 
-use app\core\Model;
+use izi\base\Model;
 
 /**
  * Class BaseField
  *
- * @package app\core\form
+ * @package izi\forms
  * @author Giang A Tin <vantruong1898@gmail.com>
  * @since 1.0
  */
@@ -38,8 +38,8 @@ abstract class BaseField
     public function __toString()
     {
         return sprintf('            
-            <div class="form-group mb-3">
-                <label class="form-label">%s</label>
+            <div class="forms-group mb-3">
+                <label class="forms-label">%s</label>
                 %s
                 <div class="invalid-feedback">%s</div>
             </div>

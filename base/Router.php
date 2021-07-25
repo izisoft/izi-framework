@@ -5,15 +5,14 @@
  * @license https://framework.iziweb.net/license
  */
 
-namespace app\core;
+namespace izi\base;
 
-use app\controllers\Controller;
-use app\core\exceptions\NotFoundException;
+use izi\exceptions\NotFoundException;
 
 /**
  * Class Router
  *
- * @package app\core
+ * @package izi
  * @author Giang A Tin <vantruong1898@gmail.com>
  * @since 1.0
  */
@@ -43,7 +42,6 @@ class Router
     {
         $this->routers['post'][$path] = $callback;
     }
-
 
     public function resolve()
     {
@@ -83,8 +81,6 @@ class Router
         return Application::$app->view->renderContent($viewContent);
     }
 
-
-
     /**
      * @return Response
      */
@@ -92,7 +88,5 @@ class Router
     {
         return $this->response;
     }
-
-
 
 }

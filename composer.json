@@ -1,0 +1,27 @@
+{
+    "name": "izisoft/izi-framework",
+    "description": "PHP MVC Framework",
+    "keywords": [
+        "php mvc framework"
+    ],
+    "homepage": "https://framework.iziweb.net",
+    "type": "library",
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Giang A Tin",
+            "email": "vantruong1898@gmail.com",
+            "role": "Founder and project lead"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/izisoft/izi-framework/issues?state=open",
+        "source": "https://github.com/izisoft/izi-framework"
+    },
+    "require": {
+        "php": ">=7.0"
+    },
+    "autoload": {
+        "psr-4": {"izi\\": ""}
+    }
+}

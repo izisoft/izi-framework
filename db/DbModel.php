@@ -7,7 +7,6 @@
 
 namespace izi\db;
 
-use izi\base\Application;
 use izi\base\Model;
 
 /**
@@ -67,6 +66,6 @@ abstract class DbModel extends Model
      */
     public static function prepare(string $sql)
     {
-        return Application::$app->db->pdo->prepare($sql);
+        return \Izi::$app->db->pdo->prepare($sql);
     }
 }

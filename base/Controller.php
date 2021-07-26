@@ -16,7 +16,7 @@ use izi\middlewares\BaseMiddleware;
  * @author Giang A Tin <vantruong1898@gmail.com>
  * @since 1.0
  */
-class Controller
+class Controller extends Component
 {
 
     public string $layout = 'main';

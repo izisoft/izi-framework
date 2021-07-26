@@ -6,7 +6,7 @@
  */
 
 namespace izi\base;
-
+use Izi;
 use izi\exceptions\NotFoundException;
 
 /**
@@ -27,10 +27,10 @@ class Router
      * @param Request $request
      * @param Response $response
      */
-    public function __construct(Request $request, Response $response)
+    public function __construct()
     {
-        $this->request = $request;
-        $this->response = $response;
+        $this->request = Izi::$app->request;
+        $this->response = Izi::$app->response;
     }
 
     public function get($path, $callback)
@@ -59,7 +59,7 @@ class Router
         if(is_array($callback)){
             /** @var Controller $controller */
             $controller = new $callback[0];
-            Application::$app->controller = $controller;
+            Izi::$app->controller = $controller;
             $controller->action = $callback[1];
             $callback[0] = $controller;
 
@@ -73,12 +73,12 @@ class Router
 
     public function renderView($view, $params)
     {
-        return Application::$app->view->renderView($view, $params);
+        return Izi::$app->view->renderView($view, $params);
     }
 
     public function renderContent($viewContent)
     {
-        return Application::$app->view->renderContent($viewContent);
+        return Izi::$app->view->renderContent($viewContent);
     }
 
     /**

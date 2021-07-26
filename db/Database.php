@@ -25,18 +25,14 @@ class Database
     public function __construct(array $config)
     {
         $dsn = $config['dsn'];
-        $user = $config['user'];
+        $user = $config['username'];
         $password = $config['password'];
-
-
         try {
             $this->pdo = new \PDO($dsn, $user, $password);
             $this->pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
-//            echo 'Connected';
         }catch (\PDOException $e){
             echo "Err: " . $e->getMessage();
         }
-
     }
 
     public function applyMigrations()

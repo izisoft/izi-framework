@@ -7,6 +7,8 @@
 
 namespace izi\base;
 
+use Izi;
+
 /**
  * Class View
  *
@@ -36,14 +38,14 @@ class View
 
     protected function layoutContent()
     {
-        $layout = Application::$app->layout;
+        $layout = Izi::$app->layout;
 
-        if(Application::$app->controller){
-            $layout = Application::$app->controller->layout;
+        if(Izi::$app->controller){
+            $layout = Izi::$app->controller->layout;
         }
 
         ob_start();
-        include_once Application::$ROOT_DIR . "/views/layouts/$layout.php";
+        include_once Izi::getAlias('@webroot') . "/views/layouts/$layout.php";
         return ob_get_clean();
     }
 
@@ -55,7 +57,7 @@ class View
         ob_start();
 
 
-        include_once Application::$ROOT_DIR . "/views/$view.php";
+        include_once Izi::getAlias('@webroot') . "/views/$view.php";
         return ob_get_clean();
     }
 }
